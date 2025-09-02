@@ -1,0 +1,10 @@
+flask==2.3.3
+simplet5==0.1.4
+transformers==4.16.2
+torch>=1.13.1
+sentencepiece
+sentence-transformers==2.2.2
+huggingface_hub==0.10.1
+scikit-learn==1.4.1.post1
+nltk==3.8.1
+PyMuPDF==1.23.22

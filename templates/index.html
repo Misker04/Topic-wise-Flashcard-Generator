@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Topic-wise Flashcard Generator</title>
+</head>
+<body>
+    <h1>📖 Topic-wise Flashcard Generator</h1>
+    <form method="POST" enctype="multipart/form-data">
+        <label>Select a .pdf or .txt file:</label><br>
+        <input type="file" name="file"><br><br>
+
+        <label>Or paste your content here:</label><br>
+        <textarea name="raw_text" rows="10" cols="80"></textarea><br><br>
+
+        <input type="submit" value="Generate Flashcards">
+    </form>
+
+    {% if error %}
+        <p style="color:red;">{{ error }}</p>
+    {% endif %}
+
+    {% for topic, qas in flashcards %}
+        <h2>{{ topic }}</h2>
+        {% for q, a in qas %}
+            <p><strong>Q:</strong> {{ q }}</p>
+            <p><strong>A:</strong> {{ a }}</p>
+            <hr>
+        {% endfor %}
+    {% endfor %}
+</body>
+</html>
